@@ -4,7 +4,7 @@ using UnityEngine;
 namespace PersistantData
 {
     [Serializable]
-    public class ObservableProperty<TPropertyType>
+    public abstract class ObservableProperty<TPropertyType>
     {
         [SerializeField] protected TPropertyType _value;
 
