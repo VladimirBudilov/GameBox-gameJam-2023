@@ -10,7 +10,7 @@ namespace Components.Physics
         [SerializeField] private LayerMask _layer = ~0;
         [SerializeField] private EnterEvent _action;
 
-        private void OnTriggerEnter(Collider collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.IsInLayer(_layer)) 
                 _action?.Invoke(collision.gameObject);
