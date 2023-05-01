@@ -16,7 +16,8 @@ namespace Components.Movement
 
         public float Direction { get; set; }
         public bool IsJumpPressing { get; set; }
-        
+        public bool JumpButtonWasPressed { get; set; }
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -50,6 +51,7 @@ namespace Components.Movement
                 _isJumping = true;
 
                 var isFalling = yVelocity <= 0.001f;
+                if (isFalling) _isJumping = false;
 
                 yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
             }
@@ -63,13 +65,15 @@ namespace Components.Movement
 
         private float CalculateJumpVelocity(float yVelocity)
         {
-            if (_isGrounded)
+            if (_isGrounded && !JumpButtonWasPressed)
             {
                 yVelocity = _jumpForce;
+                JumpButtonWasPressed = true;
             }
 
             return yVelocity;
         }
+
 
         private float CalculateXVelocity()
         {

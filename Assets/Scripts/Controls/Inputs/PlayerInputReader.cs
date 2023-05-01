@@ -21,9 +21,16 @@ namespace Controls.Inputs
 
         public void Jump(InputAction.CallbackContext context)
         {
-            if (context.started) _playerMovementComponent.IsJumpPressing = true;
+            if (context.started)
+            {
+                _playerMovementComponent.IsJumpPressing = true;
+            }
 
-            if (context.canceled) _playerMovementComponent.IsJumpPressing = false;
+            if (context.canceled)
+            {
+                _playerMovementComponent.IsJumpPressing = false;
+                _playerMovementComponent.JumpButtonWasPressed = false;
+            }
         }
     }
 }
