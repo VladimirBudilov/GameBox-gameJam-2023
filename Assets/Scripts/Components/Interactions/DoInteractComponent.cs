@@ -23,8 +23,15 @@ namespace Components.Interactions
             }
             else if (interactable is AnimatedInteractionComponent animatedInteractable)
             {
-                _animationComponent.Event = animatedInteractable.InteractAction;
-                _animationComponent.Animator.SetTrigger(animatedInteractable.AnimationName);
+                if (_animationComponent != null)
+                {
+                    _animationComponent.Event = animatedInteractable.InteractAction;
+                    _animationComponent.Animator.SetTrigger(animatedInteractable.AnimationName);
+                }
+                else
+                {
+                    interactable.InteractAction.Invoke();
+                }
             }
         }
     }
