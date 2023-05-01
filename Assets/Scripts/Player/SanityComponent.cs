@@ -1,41 +1,48 @@
-using System;
+using Components.ColliderBased;
 using Model;
 using PersistantData;
+using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UI;
-using Utils;
 
 namespace Player
 {
     public class SanityComponent : MonoBehaviour
     {
         [SerializeField] private float _maxSanity;
+        [SerializeField] private Timer _sanityTickLoseTimer;
+        [SerializeField] private float _sanityLoseByTick;
+        [SerializeField] private LayerCheck _darknessCheck;
+        [SerializeField] private LayerCheck _lightCheck;
         private FloatProperty _sanity;
-        private Timer _timer = new Timer();
-        
-        public FloatProperty Sanity { get => _sanity; set => _sanity = value; }
+
+        public FloatProperty Sanity
+        {
+            get => _sanity;
+            set => _sanity = value;
+        }
+
         private void Start()
         {
             Sanity = GameSession.Instance.PlayerData.Sanity;
             Sanity.Value = _maxSanity;
             GameSession.Instance.PlayerData.MaxSanity = _maxSanity;
-            _timer.Value = _maxSanity;
-            _timer.Reset();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            Sanity.Value = _timer.RemainingTime();
-        }
+            if (_darknessCheck.IsTouchingLayer && !_lightCheck.IsTouchingLayer && _sanityTickLoseTimer.IsReady)
+            {
+                var newSanityValue = _sanity.Value - _sanityLoseByTick;
+                Sanity.Value = math.max(0, newSanityValue);
+                _sanityTickLoseTimer.Reset();
+            }
 
-        public void StopMentalDamage()
-        {
-            _timer.Suspend();
-        }
-
-        public void ContinueMentalDamage()
-        {
-            _timer.Continue();
+            if (_lightCheck.IsTouchingLayer && _sanityTickLoseTimer.IsReady)
+            {
+                var newSanityValue = _sanity.Value + _sanityLoseByTick;
+                _sanity.Value = Mathf.Min(newSanityValue, _maxSanity);
+                _sanityTickLoseTimer.Reset();
+            }
         }
     }
 }
