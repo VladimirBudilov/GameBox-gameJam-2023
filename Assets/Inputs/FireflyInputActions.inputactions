@@ -1,0 +1,34 @@
+{
+    "name": "FireflyInputActions",
+    "maps": [
+        {
+            "name": "Fire action map",
+            "id": "529716c2-a63b-400e-a3cf-eb27608cc499",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "2bef3548-f0b0-4cd7-9914-bac3b3a23f25",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b762075c-4bd8-4e01-95bd-aa398d759f11",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
