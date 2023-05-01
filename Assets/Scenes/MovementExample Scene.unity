@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 23006807}
-  m_Layer: 0
-  m_Name: FireFlyPositionFlyTo
+  m_Layer: 6
+  m_Name: FireflyPositionFlyTo
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 490017116}
   - component: {fileID: 490017115}
   - component: {fileID: 490017114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 752646347}
   - component: {fileID: 752646353}
   - component: {fileID: 752646354}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FireV01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,6 @@ GameObject:
   m_Component:
   - component: {fileID: 856903791}
   - component: {fileID: 856903790}
-  - component: {fileID: 856903789}
   - component: {fileID: 856903792}
   m_Layer: 0
   m_Name: Main Camera
@@ -708,14 +707,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &856903789
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856903788}
-  m_Enabled: 1
 --- !u!20 &856903790
 Camera:
   m_ObjectHideFlags: 0
@@ -819,7 +810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 876197727}
   - component: {fileID: 876197728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +967,7 @@ GameObject:
   - component: {fileID: 979024986}
   - component: {fileID: 979024985}
   - component: {fileID: 979024984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,6 +1088,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1319182270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1319182271}
+  - component: {fileID: 1319182273}
+  - component: {fileID: 1319182272}
+  m_Layer: 6
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1319182271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319182270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.507, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2111333743}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1319182272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319182270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7331f33399da4fb4b6b2d943bf766d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _isTouchingLayer: 0
+--- !u!58 &1319182273
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319182270}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &1963431420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1165,7 @@ GameObject:
   - component: {fileID: 1963431423}
   - component: {fileID: 1963431422}
   - component: {fileID: 1963431421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1243,7 +1299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1980523873}
   - component: {fileID: 1980523874}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TargetDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1428,7 +1484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057767090}
   - component: {fileID: 2057767091}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1583,7 +1639,9 @@ GameObject:
   - component: {fileID: 2111333744}
   - component: {fileID: 2111333745}
   - component: {fileID: 2111333746}
-  m_Layer: 0
+  - component: {fileID: 2111333748}
+  - component: {fileID: 2111333747}
+  m_Layer: 6
   m_Name: PlayerV01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1603,7 +1661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _jumpForce: 5
+  _jumpForce: 12
+  _groundCheck: {fileID: 1319182272}
 --- !u!114 &2111333742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,6 +1739,7 @@ Transform:
   m_Children:
   - {fileID: 876197727}
   - {fileID: 23006807}
+  - {fileID: 1319182271}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1742,6 +1802,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0cb808debc344ce9b969d5511391372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &2111333747
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111333740}
+  m_Enabled: 1
+--- !u!95 &2111333748
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111333740}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2130747455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1843,7 @@ GameObject:
   - component: {fileID: 2130747459}
   - component: {fileID: 2130747458}
   - component: {fileID: 2130747457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
