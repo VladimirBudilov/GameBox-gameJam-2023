@@ -1,5 +1,8 @@
-﻿namespace PersistantData
+﻿using System;
+
+namespace PersistantData
 {
+    [Serializable]
     public abstract class PrefsPersistentProperty<TPropertyType> : PersistentProperty<TPropertyType>
     {
         protected string Key;
