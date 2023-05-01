@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace PersistantData
 {
+    [Serializable]
     public class FloatPersistentProperty : PrefsPersistentProperty<float>
     {
         public FloatPersistentProperty(float defaultValue, string key) : base(defaultValue, key)

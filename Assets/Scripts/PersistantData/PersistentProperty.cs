@@ -1,5 +1,8 @@
-﻿namespace PersistantData
+﻿using System;
+
+namespace PersistantData
 {
+    [Serializable]
     public abstract class PersistentProperty<TPropertyType> : ObservableProperty<TPropertyType>
     {
         protected TPropertyType Stored;
