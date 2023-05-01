@@ -589,11 +589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7c6e55f7cb4b4ca6475793d0b3c4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chaseSpeed: 5.2
   _speed: 8
   _flyToTargetDirectionDistance: 4
   _targetDirectionTransform: {fileID: 1980523873}
-  _flyToPositionWhileIdle: {fileID: 23006807}
 --- !u!50 &752646349
 Rigidbody2D:
   serializedVersion: 4
