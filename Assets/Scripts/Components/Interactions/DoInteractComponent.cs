@@ -5,6 +5,7 @@ namespace Components.Interactions
     [RequireComponent(typeof(AnimationComponent))]
     public class DoInteractComponent : MonoBehaviour
     {
+        [SerializeField] private bool _isFirefly;
         private AnimationComponent _animationComponent;
 
         private void Awake()
@@ -16,6 +17,8 @@ namespace Components.Interactions
         {
             var interactable = go.GetComponent<IInteractable>();
             if (interactable == null) return;
+            
+            if (_isFirefly && !interactable.IsFireflyCanUse) return;
 
             if (interactable is InteractableComponent)
             {

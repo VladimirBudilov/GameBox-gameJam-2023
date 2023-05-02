@@ -11,19 +11,19 @@ namespace Controls.Inputs
     {
         private FireflyMovementComponent _fireflyMovementComponent;
         private PlayerInteractComponent _playerInteractComponent;
-
+        
         private void Awake()
         {
             _fireflyMovementComponent = GetComponent<FireflyMovementComponent>();
             _playerInteractComponent = GetComponent<PlayerInteractComponent>();
         }
 
-        public void Move(InputAction.CallbackContext context)
+        public void OnMove(InputAction.CallbackContext context)
         {
             _fireflyMovementComponent.Direction = context.ReadValue<Vector2>();
         }
 
-        public void Interact(InputAction.CallbackContext context)
+        public void OnInteract(InputAction.CallbackContext context)
         {
             if (context.started) _playerInteractComponent.Interact();
         }

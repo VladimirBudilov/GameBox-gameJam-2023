@@ -7,7 +7,9 @@ namespace Components.Interactions
     {
         [SerializeField] private UnityEvent _interactAction;
         [SerializeField] private string _animationName;
+        [SerializeField] private bool _isFireflyCanUse;
         public UnityEvent InteractAction => _interactAction;
+        public bool IsFireflyCanUse => _isFireflyCanUse;
         public string AnimationName => _animationName;
     }
 }

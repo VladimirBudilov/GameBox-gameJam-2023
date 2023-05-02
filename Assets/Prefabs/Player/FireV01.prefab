@@ -314,7 +314,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6131058569092697121}
         m_TargetAssemblyTypeName: Controls.Inputs.FireflyInputReader, Assembly-CSharp
-        m_MethodName: Move
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -330,7 +330,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6131058569092697121}
         m_TargetAssemblyTypeName: Controls.Inputs.FireflyInputReader, Assembly-CSharp
-        m_MethodName: Interact
+        m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -437,3 +437,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bbf86891f64397be939ab877af05b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isFirefly: 1
