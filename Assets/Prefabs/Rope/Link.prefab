@@ -149,7 +149,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.1
 --- !u!114 &3409361808329757753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _action:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2467366939409365945}
+        m_TargetAssemblyTypeName: Components.GameplayObjects.Rope.RopeLinkComponent,
+          Assembly-CSharp
+        m_MethodName: InteractWithRope
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _isFireflyCanUse: 0
 --- !u!114 &2467366939409365945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +191,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2c381183e14d16be105f34fd7a9c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 481412289994002213}

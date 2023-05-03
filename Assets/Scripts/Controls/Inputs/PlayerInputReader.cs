@@ -38,9 +38,19 @@ namespace Controls.Inputs
             if (context.started) _player.InteractComponent.Interact();
         }
 
-        public void RopeMovement(InputAction.CallbackContext context)
+        public void OnRopeMovement(InputAction.CallbackContext context)
         {
             _player.RopeMovementComponent.Direction = context.ReadValue<Vector2>();
+        }
+
+        public void OnReleaseRope(InputAction.CallbackContext context)
+        {
+            _player.RopeMovementComponent.ReleaseRope();
+        }
+
+        public void OnJumpOffRope(InputAction.CallbackContext context)
+        {
+            _player.RopeMovementComponent.JumpOff();
         }
     }
 }

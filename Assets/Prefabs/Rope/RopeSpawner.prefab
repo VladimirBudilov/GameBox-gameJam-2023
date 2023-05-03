@@ -102,6 +102,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _isFireflyCanUse: 0
 --- !u!114 &2757612361475260911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   _ropeSpawnPosition: {fileID: 6261465934649005363}
   _isRightCliff: 1
   _ropeDistanceInLinks: 8
+  _startRopeForce: 0
 --- !u!1 &2757612363256465791
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +131,7 @@ GameObject:
   - component: {fileID: 2757612363256465790}
   - component: {fileID: 2757612363256465789}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

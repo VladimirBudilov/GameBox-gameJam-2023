@@ -11,15 +11,15 @@ GameObject:
   - component: {fileID: 6599382716302413518}
   - component: {fileID: 6599382716302413525}
   - component: {fileID: 6599382716302413522}
-  - component: {fileID: 6599382716302413521}
   - component: {fileID: 6599382716302413520}
-  - component: {fileID: 5614100856619863931}
   - component: {fileID: 6599382716302413519}
   - component: {fileID: 6599382716302413523}
   - component: {fileID: 6599382716302413516}
   - component: {fileID: 7031510661698210418}
   - component: {fileID: 6599382716302413524}
   - component: {fileID: 197098005454453570}
+  - component: {fileID: 1910412527994794008}
+  - component: {fileID: 5649688799077059086}
   m_Layer: 6
   m_Name: PlayerV01
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6599382716302413517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.097381055, y: 1.9839326, z: -0.030226037}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56,7 +56,7 @@ Animator:
   m_GameObject: {fileID: 6599382716302413517}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 486fb7f75b8c6f1419ca31bf5f1d061e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -75,27 +75,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6599382716302413517}
   m_Enabled: 1
---- !u!50 &6599382716302413521
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6599382716302413517}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &6599382716302413520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,30 +101,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!233 &5614100856619863931
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6599382716302413517}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!114 &6599382716302413519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,9 +175,53 @@ MonoBehaviour:
     m_ActionId: 145d4396-02e3-4907-a71e-cab38d7c1ede
     m_ActionName: Player action map/Interact[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6599382716302413523}
+        m_TargetAssemblyTypeName: Controls.Inputs.PlayerInputReader, Assembly-CSharp
+        m_MethodName: OnRopeMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9f465741-5f5f-43dc-9f7a-ecfdf04df938
     m_ActionName: Rope actions/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6599382716302413523}
+        m_TargetAssemblyTypeName: Controls.Inputs.PlayerInputReader, Assembly-CSharp
+        m_MethodName: OnReleaseRope
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a686808-a53b-480d-8214-179f79ed47be
+    m_ActionName: Rope actions/ReleaseRope[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6599382716302413523}
+        m_TargetAssemblyTypeName: Controls.Inputs.PlayerInputReader, Assembly-CSharp
+        m_MethodName: OnJumpOffRope
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2e09a8ad-f4de-4b1e-bd80-5c41a5061789
+    m_ActionName: Rope actions/JumpOffRope[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Ground actions
@@ -267,7 +266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614389a3308e4a218e65ba8a29c8b1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerJoint: {fileID: 0}
+  _animator: {fileID: 6599382716302413525}
+  _ropeController: {fileID: 9100000, guid: 486fb7f75b8c6f1419ca31bf5f1d061e, type: 2}
+  _groundController: {fileID: 9100000, guid: 098a0c5bd099ab948b5448d45c59aaa3, type: 2}
+  _pushForce: 10
 --- !u!114 &6599382716302413524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +300,51 @@ MonoBehaviour:
   _interactComponent: {fileID: 6599382716302413524}
   _input: {fileID: 6599382716302413519}
   _fireflyTransformToFly: {fileID: 6599382717988185590}
+--- !u!50 &1910412527994794008
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599382716302413517}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!233 &5649688799077059086
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599382716302413517}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
 --- !u!1 &6599382717097817119
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f81737c9004117b55f30decbf9f362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionRange: 0.4
+  _interactionRange: 1
   _layerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -479,7 +526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6599382717273414911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.030226037}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
