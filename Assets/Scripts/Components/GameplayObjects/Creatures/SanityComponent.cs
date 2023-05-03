@@ -5,7 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Utils;
 
-namespace Player
+namespace Components.GameplayObjects.Creatures
 {
     public class SanityComponent : MonoBehaviour
     {

@@ -45,12 +45,12 @@ namespace Controls.Inputs
 
         public void OnReleaseRope(InputAction.CallbackContext context)
         {
-            _player.RopeMovementComponent.ReleaseRope();
+            if (context.started) _player.RopeMovementComponent.ReleaseRope();
         }
 
         public void OnJumpOffRope(InputAction.CallbackContext context)
         {
-            _player.RopeMovementComponent.JumpOff();
+            if (context.started) _player.RopeMovementComponent.JumpOff();
         }
     }
 }

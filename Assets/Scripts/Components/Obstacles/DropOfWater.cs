@@ -1,4 +1,4 @@
-using Player;
+using Components.GameplayObjects.Creatures;
 using UnityEngine;
 
 namespace Obstacles

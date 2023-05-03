@@ -4,7 +4,7 @@ using PersistantData;
 using UnityEngine;
 using Utils;
 
-namespace Player
+namespace Components.GameplayObjects.Creatures
 {
     public class FireflyLightComponent : MonoBehaviour
     {
