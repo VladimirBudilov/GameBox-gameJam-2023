@@ -10,6 +10,8 @@ namespace Components.Movement
         [SerializeField] private float _jumpForce;
         [Space][Header("Checkers")]
         [SerializeField] private LayerCheck _groundCheck;
+        [Space] [Header("UI")]
+        [SerializeField] private Transform _sanityBarCanvasTransform;
         private Rigidbody2D _rigidbody;
         private bool _isJumping;
         private bool _isGrounded;
@@ -85,10 +87,12 @@ namespace Components.Movement
             if (_rigidbody.velocity.x < 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
+                _sanityBarCanvasTransform.transform.localScale = new Vector3(-1, 1, 1);
             }
             else if (_rigidbody.velocity.x > 0)
             {
                 transform.localScale = Vector3.one;
+                _sanityBarCanvasTransform.transform.localScale = Vector3.one;
             }
         }
     }
