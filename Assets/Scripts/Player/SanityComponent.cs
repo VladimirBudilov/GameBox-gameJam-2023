@@ -3,7 +3,7 @@ using Model;
 using PersistantData;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Utils;
 
 namespace Player
 {

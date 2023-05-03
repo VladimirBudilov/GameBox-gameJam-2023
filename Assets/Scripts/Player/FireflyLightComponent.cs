@@ -1,9 +1,7 @@
-using System;
 using Components.ColliderBased;
 using Model;
 using PersistantData;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
 namespace Player
@@ -16,7 +14,6 @@ namespace Player
         [SerializeField] private Timer _regenLightTimer;
         [SerializeField] private float _lightRegenByTick;
         [SerializeField] private LayerCheck _saveZoneMask;
-        [SerializeField] private float _damageByWater;
         private FloatProperty _fireflyLight;
 
         public FloatProperty FireflyLight { get => _fireflyLight; set => _fireflyLight = value; }
