@@ -11,17 +11,17 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - Wall
+  - Trap
+  - Interactable
+  - Destructable
+  - Firefly
+  - Rope
+  - SafeZone
+  - Darkness
+  - Light
   - 
   - 
   - 
