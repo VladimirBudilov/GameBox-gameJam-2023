@@ -18,10 +18,10 @@ TagManager:
   - Interactable
   - Destructable
   - Firefly
+  - Rope
+  - SafeZone
   - Darkness
   - Light
-  - SaveZone
-  - 
   - 
   - 
   - 
