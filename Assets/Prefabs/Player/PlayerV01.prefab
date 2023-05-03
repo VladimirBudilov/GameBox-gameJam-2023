@@ -174,8 +174,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6599382716302413523}
-        m_TargetAssemblyTypeName: Controls.Inputs.PersonInputReader, Assembly-CSharp
-        m_MethodName: Move
+        m_TargetAssemblyTypeName: Controls.Inputs.PlayerInputReader, Assembly-CSharp
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -190,8 +190,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6599382716302413523}
-        m_TargetAssemblyTypeName: Controls.Inputs.PersonInputReader, Assembly-CSharp
-        m_MethodName: Jump
+        m_TargetAssemblyTypeName: Controls.Inputs.PlayerInputReader, Assembly-CSharp
+        m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6599382716302413523}
         m_TargetAssemblyTypeName: Controls.Inputs.PlayerInputReader, Assembly-CSharp
-        m_MethodName: Interact
+        m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -453,6 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bbf86891f64397be939ab877af05b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isFirefly: 0
 --- !u!1 &6599382717273414911
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,12 +14,12 @@ namespace Controls.Inputs
             _player = GetComponent<Player>();
         }
 
-        public void Move(InputAction.CallbackContext context)
+        public void OnMove(InputAction.CallbackContext context)
         {
             _player.MovementComponent.Direction = context.ReadValue<float>();
         }
 
-        public void Jump(InputAction.CallbackContext context)
+        public void OnJump(InputAction.CallbackContext context)
         {
             if (context.started)
             {
@@ -33,7 +33,7 @@ namespace Controls.Inputs
             }
         }
 
-        public void Interact(InputAction.CallbackContext context)
+        public void OnInteract(InputAction.CallbackContext context)
         {
             if (context.started) _player.InteractComponent.Interact();
         }
