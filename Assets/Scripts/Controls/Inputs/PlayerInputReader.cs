@@ -1,45 +1,46 @@
-using Components.Interactions;
-using Components.Movement;
+using Components.GameplayObjects.Creatures;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Controls.Inputs
 {
-    [RequireComponent(typeof(PlayerMovementComponent))]
-    [RequireComponent(typeof(PlayerInteractComponent))]
+    [RequireComponent(typeof(Player))]
     public class PlayerInputReader : MonoBehaviour
     {
-        private PlayerInteractComponent _playerInteractComponent;
-        private PlayerMovementComponent _playerMovementComponent;
+        private Player _player;
 
         private void Awake()
         {
-            _playerMovementComponent = GetComponent<PlayerMovementComponent>();
-            _playerInteractComponent = GetComponent<PlayerInteractComponent>();
+            _player = GetComponent<Player>();
         }
 
         public void Move(InputAction.CallbackContext context)
         {
-            _playerMovementComponent.Direction = context.ReadValue<float>();
+            _player.MovementComponent.Direction = context.ReadValue<float>();
         }
 
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.started)
             {
-                _playerMovementComponent.IsJumpPressing = true;
+                _player.MovementComponent.IsJumpPressing = true;
             }
 
             if (context.canceled)
             {
-                _playerMovementComponent.IsJumpPressing = false;
-                _playerMovementComponent.JumpButtonWasPressed = false;
+                _player.MovementComponent.IsJumpPressing = false;
+                _player.MovementComponent.JumpButtonWasPressed = false;
             }
         }
 
         public void Interact(InputAction.CallbackContext context)
         {
-            if (context.started) _playerInteractComponent.Interact();
+            if (context.started) _player.InteractComponent.Interact();
+        }
+
+        public void RopeMovement(InputAction.CallbackContext context)
+        {
+            _player.RopeMovementComponent.Direction = context.ReadValue<Vector2>();
         }
     }
 }
