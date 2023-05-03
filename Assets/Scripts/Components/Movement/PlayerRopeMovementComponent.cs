@@ -10,8 +10,8 @@ namespace Components.Movement
     public class PlayerRopeMovementComponent : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private AnimatorController _ropeController;
-        [SerializeField] private AnimatorController _groundController;
+        [SerializeField] private RuntimeAnimatorController _ropeController;
+        [SerializeField] private RuntimeAnimatorController _groundController;
         [SerializeField] private float _jumpOffForce = 3f;
         [SerializeField] private Timer _grabTime;
         private HingeJoint2D _playerJoint;

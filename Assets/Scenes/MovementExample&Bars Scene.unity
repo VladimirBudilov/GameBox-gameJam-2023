@@ -160,7 +160,7 @@ MonoBehaviour:
   _playerPrefab: {fileID: 6599382716302413517, guid: e2158898cbff6c347ba150be244919a6, type: 3}
   _fireflyPrefab: {fileID: 6131058569092697147, guid: e530575d0ff825142bcc0203f0cf24e4, type: 3}
   _spawnPosition: {fileID: 1039743905}
-  _camera: {fileID: 0}
+  _camera: {fileID: 969735799}
 --- !u!4 &375772511
 Transform:
   m_ObjectHideFlags: 0

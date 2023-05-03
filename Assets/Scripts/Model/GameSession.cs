@@ -11,7 +11,7 @@ namespace Model
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private GameObject _fireflyPrefab;
         [SerializeField] private Transform _spawnPosition;
-        [SerializeField] private Camera _camera;
+        [SerializeField] private CinemachineVirtualCamera _camera;
         public PlayerData PlayerData => _playerData;
         public Player Player { get; private set; }
         
@@ -28,7 +28,7 @@ namespace Model
             Player = Instantiate(_playerPrefab.gameObject, _spawnPosition.position, Quaternion.identity).GetComponent<Player>();
             Player.SetGroundMovement();
             var firefly = Instantiate(_fireflyPrefab, Player.FireflyTransformToFly.position, quaternion.identity);
-            _camera.GetComponentInChildren<CinemachineVirtualCamera>().Follow = firefly.transform;
+            _camera.Follow = firefly.transform;
         }
     }
 }
