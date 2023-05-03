@@ -68,6 +68,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "8473315c-d73a-4e70-aec3-0304b461f92f",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "175127d5-9be2-4435-8c4f-8a5e7407fabe",
+                    "path": "<Keyboard>/#(Ф)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "89962beb-1f77-4774-a20a-012e2e70ca87",
+                    "path": "<Keyboard>/#(В)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "30fb062b-1830-4445-a6e2-2aa2d16236e7",
                     "path": "<Keyboard>/space",

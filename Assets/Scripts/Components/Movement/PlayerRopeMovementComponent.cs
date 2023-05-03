@@ -1,6 +1,5 @@
 ﻿using Components.GameplayObjects.Rope;
 using Model;
-using UnityEditor.Animations;
 using UnityEngine;
 using Utils;
 
@@ -51,7 +50,6 @@ namespace Components.Movement
         public void ReleaseRope()
         {
             GameSession.Instance.Player.SetGroundMovement();
-            Debug.Log("Rope released!");
             _animator.runtimeAnimatorController = _groundController;
             _playerJoint.enabled = false;
             _playerJoint.connectedBody = null;

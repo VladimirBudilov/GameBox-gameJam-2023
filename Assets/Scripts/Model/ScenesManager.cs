@@ -5,6 +5,11 @@ public class ScenesManager : MonoBehaviour
 {
     public void LoadStartScene()
     {
-        SceneManager.LoadScene("DemoScene");
+        SceneManager.LoadScene("Scenes/Demo Scene");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
