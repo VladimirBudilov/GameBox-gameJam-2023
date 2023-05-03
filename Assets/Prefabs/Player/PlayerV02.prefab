@@ -468,6 +468,8 @@ MonoBehaviour:
   _ropeController: {fileID: 9100000, guid: 486fb7f75b8c6f1419ca31bf5f1d061e, type: 2}
   _groundController: {fileID: 9100000, guid: 098a0c5bd099ab948b5448d45c59aaa3, type: 2}
   _jumpOffForce: 3
+  _grabTime:
+    _value: 0.2
 --- !u!114 &6599382716302413524
 MonoBehaviour:
   m_ObjectHideFlags: 0
