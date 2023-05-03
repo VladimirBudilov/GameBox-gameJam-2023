@@ -2,6 +2,7 @@
 using Model;
 using UnityEditor.Animations;
 using UnityEngine;
+using Utils;
 
 namespace Components.Movement
 {
@@ -13,6 +14,7 @@ namespace Components.Movement
         [SerializeField] private AnimatorController _ropeController;
         [SerializeField] private AnimatorController _groundController;
         [SerializeField] private float _jumpOffForce = 3f;
+        [SerializeField] private Timer _grabTime;
         private HingeJoint2D _playerJoint;
         private Rigidbody2D _rigidbody;
         private bool _onRope;
@@ -28,7 +30,7 @@ namespace Components.Movement
 
         public void InteractWithRope(Rigidbody2D ropeLinkRigidbody)
         {
-            if (_onRope) ReleaseRope();
+            if (_onRope && _grabTime.IsReady) ReleaseRope();
             else GrabRope(ropeLinkRigidbody);
         }
 
@@ -43,11 +45,13 @@ namespace Components.Movement
             _playerJoint.connectedAnchor = Vector2.zero;
             UpdateSpriteDirection(ropeLinkRigidbody.GetComponent<RopeLinkComponent>().IsGrabSideRight);
             _playerJoint.anchor = Vector2.left;
+            _grabTime.Reset();
         }
 
         public void ReleaseRope()
         {
             GameSession.Instance.Player.SetGroundMovement();
+            Debug.Log("Rope released!");
             _animator.runtimeAnimatorController = _groundController;
             _playerJoint.enabled = false;
             _playerJoint.connectedBody = null;
