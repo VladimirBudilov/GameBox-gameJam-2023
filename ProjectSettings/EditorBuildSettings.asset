@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/DarkLevel Scene.unity
+    guid: 2bfc160518f2cbb4baeac55d41d7f033
   m_configObjects: {}
