@@ -52,7 +52,7 @@ namespace Components.Movement
             {
                 _isJumping = true;
 
-                var isFalling = yVelocity <= 0.001f;
+                var isFalling = yVelocity <= 0.5f;
                 if (isFalling) _isJumping = false;
 
                 yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
