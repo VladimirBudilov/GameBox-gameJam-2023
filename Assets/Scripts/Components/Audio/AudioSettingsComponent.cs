@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Components.Audio
 {
     [RequireComponent(typeof(AudioSource))]
-    public class AudioSettingComponent : MonoBehaviour
+    public class AudioSettingsComponent : MonoBehaviour
     {
         [SerializeField] SoundSettings _mode;
         private AudioSource _source;
