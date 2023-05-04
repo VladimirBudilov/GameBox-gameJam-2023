@@ -74,17 +74,11 @@ namespace Components.Movement
 
         private void VerticalMove()
         {
-            if (_climbInProgress) return;
+            if (_climbInProgress || Direction.y > 0) return;
             RopeLinkComponent connection = _playerJoint.connectedBody.gameObject.GetComponent<RopeLinkComponent>();
             GameObject newSeg = null;
-            
-            
-            if (Direction.y > 0 && connection.PreviousSegment != null)
-            {
-                newSeg = connection.PreviousSegment.gameObject;
-                _animator.SetTrigger("ClimbUp");
-            }
-            else if(Direction.y < 0 && connection.NextSegment != null)
+
+            if (Direction.y < 0 && connection.NextSegment != null)
             {
                 newSeg = connection.NextSegment.gameObject;
                 _animator.SetTrigger("ClimbDown");
@@ -100,7 +94,7 @@ namespace Components.Movement
 
         private void HorizontalMove()
         {
-            //TODO: сделать раскачивание на веревке
+            //TODO: сделать раскачивание на веревке (а можно и не делать) :)
         }
 
         private void UpdateSpriteDirection(bool isRight)
