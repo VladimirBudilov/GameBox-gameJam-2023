@@ -1,4 +1,5 @@
 ﻿using PersistantData;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ namespace UI.Widgets
     public class AudioSettingsWidget : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
-        [SerializeField] private Text _value;
+        [SerializeField] private TextMeshProUGUI _value;
 
         private FloatPersistentProperty _model;
 
