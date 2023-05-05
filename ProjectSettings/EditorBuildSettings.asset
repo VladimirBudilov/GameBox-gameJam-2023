@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start Scene.unity
-    guid: a4f6b15a0f7547f4d84db114d49ad3fc
+    path: Assets/Scenes/UIScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Demo Scene.unity
-    guid: 805a4e1b8e5ee2141ab02a341535e0cb
+    path: Assets/Scenes/DarkLevel Scene.unity
+    guid: 2bfc160518f2cbb4baeac55d41d7f033
   m_configObjects: {}
