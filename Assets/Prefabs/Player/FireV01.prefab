@@ -386,7 +386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6131058568108085650
 Transform:
   m_ObjectHideFlags: 0
@@ -716,6 +716,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f58bbad0-601b-416a-a65a-52d32d185e43
     m_ActionName: Fire action map/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6131058569092697121}
+        m_TargetAssemblyTypeName: Controls.Inputs.FireflyInputReader, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4eb6bf4e-b481-4777-9e97-7e75d41e9a90
+    m_ActionName: Fire action map/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Fire action map

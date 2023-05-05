@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Components.ColliderBased;
+using Model;
 using UnityEngine;
 
 namespace Components.GameplayObjects.Rope
@@ -13,6 +14,7 @@ namespace Components.GameplayObjects.Rope
         [SerializeField] private LineRenderer _lineRenderer;
         private List<GameObject> _linksArray = new List<GameObject>();
         private bool _isRopeGenerated;
+        private bool IsPaused => GameSession.Instance.PauseManager.IsPaused;
 
         public void GenerateRope(bool isRightCliff, int ropeDistanceInLinks, int startRopeForce)
         {
@@ -62,7 +64,7 @@ namespace Components.GameplayObjects.Rope
 
         private void Update()
         {
-            if (!_isRopeGenerated) return;
+            if (!_isRopeGenerated || IsPaused) return;
             _lineRenderer.SetPosition(0, _hook.transform.position);
             for (int i = 0; i < _linksArray.Count; i++)
             {

@@ -1,14 +1,17 @@
 ﻿using System;
+using Model;
+using Pause;
 using UnityEngine;
 
 namespace Utils
 {
     [Serializable]
-    public class Timer
+    public class Timer : IPauseHandler
     {
         [SerializeField] private float _value;
         private float _timeUp;
-
+        private float _timeOnPause;
+        private bool IsPaused => GameSession.Instance.PauseManager.IsPaused;
         public float Value
         {
             get => _value;
@@ -27,6 +30,19 @@ namespace Utils
 
         public float RemainingTime => Mathf.Max(_timeUp - Time.time, 0f);
 
-        public bool IsReady => _timeUp <= Time.time;
+        public bool IsReady => !IsPaused && _timeUp <= Time.time;
+        
+        public void SetPaused(bool isPaused)
+        {
+            if (isPaused)
+            {
+                _timeOnPause = Time.time;
+            }
+            else
+            {
+                _timeOnPause = Time.time - _timeOnPause;
+                _timeUp += _timeOnPause;
+            }
+        }
     }
 }

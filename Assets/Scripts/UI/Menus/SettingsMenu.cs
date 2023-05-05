@@ -8,7 +8,8 @@ namespace UI.Menus
     {
         [SerializeField] private AudioSettingsWidget _music;
         [SerializeField] private AudioSettingsWidget _sfx;
-        protected void Start()
+
+        private void Awake()
         {
             _music.SetModel(GameSettings.Instance.Music);
             _sfx.SetModel(GameSettings.Instance.Sfx);
