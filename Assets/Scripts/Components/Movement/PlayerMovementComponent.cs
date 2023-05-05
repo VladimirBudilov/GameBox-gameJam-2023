@@ -1,5 +1,7 @@
 using Components.ColliderBased;
 using UnityEngine;
+using UnityEngine.Events;
+using Utils;
 
 namespace Components.Movement
 {
@@ -8,7 +10,9 @@ namespace Components.Movement
         [Header("Settings fields")]
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
+        [SerializeField] private float _deathHigh;
         [Space][Header("Checkers")]
+        [SerializeField] private DeathEvent _deathEvent;
         [SerializeField] private LayerCheck _groundCheck;
         [Space] [Header("UI")]
         [SerializeField] private Transform _sanityBarCanvasTransform;
@@ -27,6 +31,10 @@ namespace Components.Movement
 
         private void Update()
         {
+            if (_isGrounded != _groundCheck.IsTouchingLayer && _rigidbody.velocity.y <= -_deathHigh)
+            {
+                _deathEvent?.Invoke("fall");
+            }
             _isGrounded = _groundCheck.IsTouchingLayer;
         }
 

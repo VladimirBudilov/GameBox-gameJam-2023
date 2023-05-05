@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 6599382716302413524}
   - component: {fileID: 197098005454453570}
   - component: {fileID: 2141346323098162675}
+  - component: {fileID: -4794680870257726419}
   m_Layer: 6
   m_Name: PlayerV02
   m_TagString: Untagged
@@ -450,6 +451,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _jumpForce: 7
+  _deathHigh: 20
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4794680870257726419}
+        m_TargetAssemblyTypeName: Model.PlayerDeath, Assembly-CSharp
+        m_MethodName: Death
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _groundCheck: {fileID: 6599382717097817185}
   _sanityBarCanvasTransform: {fileID: 6902610498511596574}
 --- !u!114 &7031510661698210418
@@ -495,10 +512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80843ab701543eb915fe7eec4d010fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementComponent: {fileID: 6599382716302413516}
-  _ropeMovementComponent: {fileID: 7031510661698210418}
-  _interactComponent: {fileID: 6599382716302413524}
-  _input: {fileID: 6599382716302413519}
   _fireflyTransformToFly: {fileID: 6599382717988185590}
 --- !u!114 &2141346323098162675
 MonoBehaviour:
@@ -512,7 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659cf476be741a5803cfd2212f4c06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSanity: 100
   _sanityTickLoseTimer:
     _value: 1.5
   _sanityLoseByTick: 2
@@ -521,6 +533,34 @@ MonoBehaviour:
   _sanityRegenByTick: 5
   _saveZoneCheck: {fileID: 3511410203735239745}
   _lightCheck: {fileID: 3629947901913386867}
+  _maxSanity: 100
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4794680870257726419}
+        m_TargetAssemblyTypeName: Model.PlayerDeath, Assembly-CSharp
+        m_MethodName: Death
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-4794680870257726419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599382716302413517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54fe0957cad4d82945c9581895fb263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6599382717097817119
 GameObject:
   m_ObjectHideFlags: 0
