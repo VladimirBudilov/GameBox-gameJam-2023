@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 6131058569092697127}
   - component: {fileID: 764405881266525811}
   m_Layer: 12
-  m_Name: FireV01
+  m_Name: Firefly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
