@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 642607969637401918}
   - component: {fileID: 1555207907018040238}
   - component: {fileID: 5841120664430350369}
+  - component: {fileID: 8399291526101328366}
   - component: {fileID: 5265644940691301299}
   - component: {fileID: -8027175050368284611}
   - component: {fileID: -6623358743131165698}
+  - component: {fileID: 2923197155563201769}
   m_Layer: 4
   m_Name: Drop
   m_TagString: Untagged
@@ -126,6 +128,102 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
+--- !u!82 &8399291526101328366
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5598620679096118765}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &5265644940691301299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +257,18 @@ MonoBehaviour:
       - m_Target: {fileID: -6623358743131165698}
         m_TargetAssemblyTypeName: Obstacles.DropOfWater, Assembly-CSharp
         m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2923197155563201769}
+        m_TargetAssemblyTypeName: Components.Audio.PlaySoundComponent, Assembly-CSharp
+        m_MethodName: PlayRandomSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -211,3 +321,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 20
+  _source: {fileID: 8399291526101328366}
+  _spriteRenderer: {fileID: 642607969637401918}
+  _playSoundComponent: {fileID: 2923197155563201769}
+--- !u!114 &2923197155563201769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5598620679096118765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64fcb78df2f1bb4aa61995d71978e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 8399291526101328366}
+  _sounds:
+  - _id: 0
+    _clip: {fileID: 8300000, guid: f1602b493ae84c94a8a995728d8b90cd, type: 3}
+  - _id: 1
+    _clip: {fileID: 8300000, guid: 123505b80d05d47449009db1175507e5, type: 3}
+  - _id: 2
+    _clip: {fileID: 8300000, guid: 6b8c9eb93132b4547904e95915f9dc16, type: 3}
