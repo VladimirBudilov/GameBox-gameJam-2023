@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5766044373218091225}
   - component: {fileID: 5766044373218091226}
-  - component: {fileID: 1473626150109284107}
   - component: {fileID: 3653909107716593007}
   m_Layer: 13
   m_Name: Rope
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5766044373218091230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.033, y: -0.008, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5766044373462817436}
@@ -52,24 +51,8 @@ MonoBehaviour:
   _hook: {fileID: 6245167925240361768}
   _linkPrefab: {fileID: 481412289994002215, guid: 6ceb37bb4d1305946b2009c220b12925, type: 3}
   _weight: {fileID: 5766044373950889308}
-  _offsetMultiplier: 0.1
+  _offsetMultiplier: 0.15
   _lineRenderer: {fileID: 3653909107716593007}
---- !u!58 &1473626150109284107
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5766044373218091230}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!120 &3653909107716593007
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -221,14 +204,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5766044373462817427}
-  m_LocalRotation: {x: -0, y: -0, z: 0.35391378, w: 0.93527806}
+  m_LocalRotation: {x: 0, y: 0, z: -0.3420201, w: 0.9396927}
   m_LocalPosition: {x: -0.4557, y: 0.366, z: 0}
-  m_LocalScale: {x: 0.2918244, y: 2.4352822, z: 1}
+  m_LocalScale: {x: 0.1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5766044373218091225}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 41.454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40}
 --- !u!212 &5766044373462817437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -456,11 +439,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 481412289994002214, guid: 6ceb37bb4d1305946b2009c220b12925, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.77
+      value: -0.144
       objectReference: {fileID: 0}
     - target: {fileID: 481412289994002214, guid: 6ceb37bb4d1305946b2009c220b12925, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.34
+      value: 0.733
       objectReference: {fileID: 0}
     - target: {fileID: 481412289994002214, guid: 6ceb37bb4d1305946b2009c220b12925, type: 3}
       propertyPath: m_LocalPosition.z
@@ -508,11 +491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 481412289994002219, guid: 6ceb37bb4d1305946b2009c220b12925, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 1.402345
+      value: 0.028730482
       objectReference: {fileID: 0}
     - target: {fileID: 481412289994002219, guid: 6ceb37bb4d1305946b2009c220b12925, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.38520166
+      value: 0.4814952
       objectReference: {fileID: 0}
     - target: {fileID: 481412289994002219, guid: 6ceb37bb4d1305946b2009c220b12925, type: 3}
       propertyPath: m_ConnectedRigidBody

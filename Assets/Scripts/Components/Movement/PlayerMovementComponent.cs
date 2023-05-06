@@ -1,48 +1,61 @@
 using Components.ColliderBased;
 using UnityEngine;
-using UnityEngine.Events;
 using Utils;
 
 namespace Components.Movement
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovementComponent : MonoBehaviour
     {
         [Header("Settings fields")]
+        [SerializeField] private Animator _animator;
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _deathHigh;
-        [Space][Header("Checkers")]
+
+        [Space] [Header("Checkers")]
         [SerializeField] private DeathEvent _deathEvent;
         [SerializeField] private LayerCheck _groundCheck;
-        [Space] [Header("UI")]
+
+        [Space] [Header("UI")] 
         [SerializeField] private Transform _sanityBarCanvasTransform;
+
         private Rigidbody2D _rigidbody;
         private bool _isJumping;
         private bool _isGrounded;
+        private bool _isDied;
+
+        private static readonly int IS_RUNNING = Animator.StringToHash("is-running");
 
         public float Direction { get; set; }
         public bool IsJumpPressing { get; set; }
         public bool JumpButtonWasPressed { get; set; }
+        public bool IsActive { get; set; }
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            IsActive = true;
         }
 
         private void Update()
         {
-            if (_isGrounded != _groundCheck.IsTouchingLayer && _rigidbody.velocity.y <= -_deathHigh)
+            if (_rigidbody.velocity.y <= -_deathHigh && !_isDied)
             {
+                _isDied = true;
                 _deathEvent?.Invoke("fall");
             }
+
             _isGrounded = _groundCheck.IsTouchingLayer;
         }
 
         private void FixedUpdate()
         {
+            Debug.Log(IsActive);
+            if (!IsActive) return;
             var velocity = CalculateVelocity();
             _rigidbody.velocity = velocity;
-            
+
             UpdateSpriteDirection();
         }
 
@@ -87,9 +100,10 @@ namespace Components.Movement
 
         private float CalculateXVelocity()
         {
+            _animator.SetBool(IS_RUNNING, Direction != 0);
             return Direction * _speed;
         }
-        
+
         private void UpdateSpriteDirection()
         {
             if (_rigidbody.velocity.x < 0)

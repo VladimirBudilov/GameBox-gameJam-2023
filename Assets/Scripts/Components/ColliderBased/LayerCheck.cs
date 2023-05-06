@@ -7,7 +7,6 @@ namespace Components.ColliderBased
     public class LayerCheck : MonoBehaviour
     {
         [SerializeField] private LayerMask _layerMask;
-        //Сериализация, чтобы видеть в инспекторе работает или нет
         [SerializeField] private bool _isTouchingLayer;
 
         private CircleCollider2D _collider;

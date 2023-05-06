@@ -45,11 +45,15 @@ namespace Components.GameplayObjects.Creatures
         public void SetRopeMovement()
         {
             _input.currentActionMap = _input.actions.FindActionMap("Rope actions");
+            _movementComponent.IsActive = false;
+            _ropeMovementComponent.IsActive = true;
         }
 
         public void SetGroundMovement()
         {
             _input.currentActionMap = _input.actions.FindActionMap("Ground actions");
+            _movementComponent.IsActive = true;
+            _ropeMovementComponent.IsActive = false;
         }
 
         public void SetPaused(bool isPaused)

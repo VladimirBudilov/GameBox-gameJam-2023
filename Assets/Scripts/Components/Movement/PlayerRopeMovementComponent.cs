@@ -20,6 +20,7 @@ namespace Components.Movement
         private bool _climbInProgress;
 
         public Vector2 Direction { get; set; }
+        public bool IsActive { get; set; }
 
         private void Awake()
         {
@@ -64,7 +65,7 @@ namespace Components.Movement
 
         private void FixedUpdate()
         {
-            if (!_onRope) return;
+            if (!_onRope && !IsActive) return;
 
             HorizontalMove();
             VerticalMove();

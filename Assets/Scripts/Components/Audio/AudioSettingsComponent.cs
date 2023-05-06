@@ -34,6 +34,7 @@ namespace Components.Audio
             {
                 case SoundSettings.Music: return GameSettings.Instance.Music;
                 case SoundSettings.Sfx: return GameSettings.Instance.Sfx;
+                case SoundSettings.Ambient: return GameSettings.Instance.Ambient;
             }
 
             throw new ArgumentException("Undefiend argument");

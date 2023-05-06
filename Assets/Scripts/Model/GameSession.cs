@@ -1,6 +1,6 @@
 using Components.GameplayObjects.Creatures;
 using Pause;
-using Cinemachine;
+using UI.Menus;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -12,7 +12,8 @@ namespace Model
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private GameObject _fireflyPrefab;
         [SerializeField] private Transform _spawnPosition;
-        [SerializeField] private CinemachineVirtualCamera _camera;
+        private DeathScreenComponent _deathScreen;
+        private Vector3 _lastCheckPointPosition;
         public PlayerData PlayerData => _playerData;
         public Player Player { get; private set; }
         public PauseManager PauseManager { get; private set; }
@@ -21,9 +22,43 @@ namespace Model
 
         private void Awake()
         {
-            Instance ??= this;
+            var existSession = GetExistSession();
+            if (existSession != null)
+            {
+                existSession.StartSession();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instance = this;
+                SetSpawnPosition(_spawnPosition);
+                StartSession();
+                DontDestroyOnLoad(this);
+            }
+        }
+
+        private void StartSession()
+        {
+            LoadUI();
             InitModels();
             SpawnPlayer();
+        }
+
+        private void LoadUI()
+        {
+            _deathScreen = FindObjectOfType<DeathScreenComponent>();
+            _deathScreen.gameObject.SetActive(false);
+        }
+
+        private GameSession GetExistSession()
+        {
+            var sessions = FindObjectsOfType<GameSession>();
+            foreach (var session in sessions)
+            {
+                if (session != this) return session;
+            }
+
+            return null;
         }
 
         private void InitModels()
@@ -33,10 +68,21 @@ namespace Model
 
         private void SpawnPlayer()
         {
-            Player = Instantiate(_playerPrefab.gameObject, _spawnPosition.position, Quaternion.identity).GetComponent<Player>();
+            Player = Instantiate(_playerPrefab.gameObject, _lastCheckPointPosition, Quaternion.identity).GetComponent<Player>();
             Player.SetGroundMovement();
-            var firefly = Instantiate(_fireflyPrefab, Player.FireflyTransformToFly.position, quaternion.identity);
-            _camera.Follow = firefly.transform;
+            Instantiate(_fireflyPrefab, Player.FireflyTransformToFly.position, quaternion.identity);
+        }
+
+        public void ShowDeath(string id)
+        {
+            _deathScreen.gameObject.SetActive(true);
+            PauseManager.SetPaused(true);
+            _deathScreen.Death(id);
+        }
+
+        public void SetSpawnPosition(Transform spawnPosition)
+        {
+            _lastCheckPointPosition = new Vector3(spawnPosition.position.x, spawnPosition.position.y, spawnPosition.position.z);
         }
     }
 }

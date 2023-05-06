@@ -1,11 +1,9 @@
-using System;
 using Components.ColliderBased;
 using Model;
 using Pause;
 using PersistantData;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
 namespace Components.GameplayObjects.Creatures
@@ -44,9 +42,9 @@ namespace Components.GameplayObjects.Creatures
             _sanity.OnChanged += OnSanityChanged;
         }
 
-        private void OnSanityChanged(float _, float __)
+        private void OnSanityChanged(float newValue, float __)
         {
-            if (_sanity.Value == 0)
+            if (newValue == 0)
             {
                 _deathEvent?.Invoke("sanity");
             }
@@ -61,7 +59,6 @@ namespace Components.GameplayObjects.Creatures
 
         private void Update()
         {
-            
             if (!_lightCheck.IsTouchingLayer && !_saveZoneCheck.IsTouchingLayer && _sanityTickLoseTimer.IsReady)
             {
                 var newSanityValue = _sanity.Value - _sanityLoseByTick;
