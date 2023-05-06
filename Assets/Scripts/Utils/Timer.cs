@@ -11,7 +11,7 @@ namespace Utils
         [SerializeField] private float _value;
         private float _timeUp;
         private float _timeOnPause;
-        private bool IsPaused => GameSession.Instance.PauseManager.IsPaused;
+        private bool IsPaused => GameSession.Instance == null ? false : GameSession.Instance.PauseManager.IsPaused;
         public float Value
         {
             get => _value;
