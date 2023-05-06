@@ -11,6 +11,7 @@ namespace Components.GameplayObjects.Rope
         [SerializeField] private int _startRopeForce;
         private bool _isSpawned;
 
+        [ContextMenu("Spawn")]
         public void SpawnRope()
         {
             if (_isSpawned) return;
