@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
@@ -9,5 +9,11 @@ public class EndGame : MonoBehaviour
     public void GameOver()
     {
         _blackScreen.SetActive(true);
+    }
+
+    public IEnumerable LoadScene()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("Start Scene");
     }
 }
