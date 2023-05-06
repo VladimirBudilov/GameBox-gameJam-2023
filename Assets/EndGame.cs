@@ -9,9 +9,10 @@ public class EndGame : MonoBehaviour
     public void GameOver()
     {
         _blackScreen.SetActive(true);
+        StartCoroutine(LoadScene());
     }
 
-    public IEnumerable LoadScene()
+    public IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Start Scene");

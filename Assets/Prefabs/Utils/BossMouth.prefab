@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6008838282127243381}
   - component: {fileID: 4155455388313412689}
   - component: {fileID: 8268162819475538357}
+  - component: {fileID: 6276526036322702442}
   m_Layer: 0
   m_Name: BossMouth
   m_TagString: Untagged
@@ -49,7 +50,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.36577487, y: -0.7315521}
+  m_Offset: {x: -0.25721836, y: -0.7315521}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -60,7 +61,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.730269, y: 2.6094055}
+  m_Size: {x: 21.186953, y: 2.6094055}
   m_EdgeRadius: 0
 --- !u!114 &7012610909985771090
 MonoBehaviour:
@@ -90,6 +91,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: eat
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276526036322702442}
+        m_TargetAssemblyTypeName: EndGame, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!82 &6008838282127243381
@@ -213,7 +226,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64fcb78df2f1bb4aa61995d71978e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
+  _source: {fileID: 6008838282127243381}
   _sounds:
   - _id: eat
     _clip: {fileID: 8300000, guid: 95dd729b154bc1140b1c51e7d8af3a32, type: 3}
+--- !u!114 &6276526036322702442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963247609567080221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5d25f12213f6943ab387f9aac3097f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blackScreen: {fileID: 0}
