@@ -354,6 +354,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24771121289436380, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771121289436380, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771121289436380, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771121289436380, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771121289436383, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 293515137}
+    - target: {fileID: 24771121289436383, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadAutorhsScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771121289436383, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScenesManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122036182733, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122036182733, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122036182733, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122036182733, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 24771122142358726, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
       propertyPath: m_Name
       value: StartSceneCanvas
@@ -442,10 +486,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 24771122516657798, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122516657798, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122516657798, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122516657798, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 24771122516657849, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 293515137}
+    - target: {fileID: 24771122837784556, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122837784556, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122837784556, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 24771122837784556, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 24771122837784559, guid: 8b37aa7679f38af4aaee43a3959f66bb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

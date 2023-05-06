@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using Utils;
@@ -9,7 +7,8 @@ public class MoveCamera : MonoBehaviour
     [SerializeField] private Timer _timer;
     [SerializeField] private float _byTick = 0.1f;
     private CinemachineVirtualCamera _camera;
-    private bool isTouched = false;
+    private bool _isTouched = false;
+    private float _currentOrtSize = 0.4f;
     
     void Start()
     {
@@ -19,16 +18,15 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (_timer.IsReady || isTouched)
+        if (_timer.IsReady && _isTouched)
         {
-            var temp = _byTick;
-            _camera.m_Lens.OrthographicSize = Mathf.Min(temp, 7);
+            _currentOrtSize += _byTick;
+            _camera.m_Lens.OrthographicSize = Mathf.Min(_currentOrtSize, 7);
         }
     }
 
     public void TouchDown()
     {
-        isTouched = true;
+        _isTouched = true;
     }
 }
