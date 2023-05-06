@@ -28,5 +28,10 @@ namespace UI.Menus
                 }
             }
         }
+
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
     }
 }
