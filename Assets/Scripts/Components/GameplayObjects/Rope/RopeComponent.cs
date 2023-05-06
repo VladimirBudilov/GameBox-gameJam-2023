@@ -10,7 +10,7 @@ namespace Components.GameplayObjects.Rope
         [SerializeField] private Rigidbody2D _hook;
         [SerializeField] private GameObject _linkPrefab;
         [SerializeField] private WeightComponent _weight;
-        [SerializeField] private float _offsetMultiplier = .1f;
+        [SerializeField] private float _offsetMultiplier = .01f;
         [SerializeField] private LineRenderer _lineRenderer;
         private List<GameObject> _linksArray = new List<GameObject>();
         private bool _isRopeGenerated;
@@ -19,6 +19,7 @@ namespace Components.GameplayObjects.Rope
         public void GenerateRope(bool isRightCliff, int ropeDistanceInLinks, int startRopeForce)
         {
             var linksAmount = ropeDistanceInLinks;
+            transform.localScale = isRightCliff ? Vector3.one : new Vector3(-1, 1, 1);
             Rigidbody2D previousRb = _hook;
             for (int i = 0; i < linksAmount; i++)
             {

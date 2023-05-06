@@ -20,6 +20,7 @@ namespace Components.Movement
         private bool _climbInProgress;
 
         public Vector2 Direction { get; set; }
+        public bool IsActive { get; set; }
 
         private void Awake()
         {
@@ -42,8 +43,9 @@ namespace Components.Movement
             _playerJoint.enabled = true;
             _onRope = true;
             _playerJoint.connectedAnchor = Vector2.zero;
-            UpdateSpriteDirection(ropeLinkRigidbody.GetComponent<RopeLinkComponent>().IsGrabSideRight);
-            _playerJoint.anchor = Vector2.left;
+            var isGrabSideRight = ropeLinkRigidbody.GetComponent<RopeLinkComponent>().IsGrabSideRight;
+            UpdateSpriteDirection(isGrabSideRight);
+            _playerJoint.anchor = isGrabSideRight ? Vector2.left : Vector2.right;
             _grabTime.Reset();
         }
 
@@ -64,7 +66,7 @@ namespace Components.Movement
 
         private void FixedUpdate()
         {
-            if (!_onRope) return;
+            if (!_onRope && !IsActive) return;
 
             HorizontalMove();
             VerticalMove();
@@ -97,7 +99,7 @@ namespace Components.Movement
 
         private void UpdateSpriteDirection(bool isRight)
         {
-            transform.localScale = isRight ? Vector3.one : new Vector3(-1, 1, 1);
+            transform.localScale = !isRight ? Vector3.one : new Vector3(-1, 1, 1);
         }
 
         public void OnClimbAnimationEnd()

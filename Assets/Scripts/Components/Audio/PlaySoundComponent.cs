@@ -16,5 +16,11 @@ namespace Components.Audio
                 break;
             }
         }
+
+        public void PlayRandomClip()
+        {
+            var randomClipNum = Random.Range(0, _sounds.Length);
+            Play(_sounds[randomClipNum].Id);
+        }
     }
 }
