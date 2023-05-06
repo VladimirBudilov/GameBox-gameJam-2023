@@ -40,6 +40,7 @@ namespace Components.GameplayObjects.Creatures
         private void Start()
         {
             Pause.Register(this);
+            GameSession.Instance.Player.SetGroundMovement();
         }
 
         public void SetRopeMovement()

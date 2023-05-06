@@ -19,12 +19,14 @@ namespace Model
         public PauseManager PauseManager { get; private set; }
         
         public static GameSession Instance;
+        public bool IsCutscene { get; set; }
 
         private void Awake()
         {
             var existSession = GetExistSession();
             if (existSession != null)
             {
+                IsCutscene = false;
                 existSession.StartSession();
                 Destroy(gameObject);
             }
@@ -75,9 +77,11 @@ namespace Model
 
         public void ShowDeath(string id)
         {
+            IsCutscene = true;
             _deathScreen.gameObject.SetActive(true);
             PauseManager.SetPaused(true);
             _deathScreen.Death(id);
+            Cursor.visible = true;
         }
 
         public void SetSpawnPosition(Transform spawnPosition)

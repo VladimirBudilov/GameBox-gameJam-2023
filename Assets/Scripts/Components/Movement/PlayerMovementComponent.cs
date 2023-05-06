@@ -1,3 +1,4 @@
+using Components.Audio;
 using Components.ColliderBased;
 using UnityEngine;
 using Utils;
@@ -7,8 +8,9 @@ namespace Components.Movement
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovementComponent : MonoBehaviour
     {
-        [Header("Settings fields")] [SerializeField]
-        private Animator _animator;
+        [Header("Settings fields")]
+        [SerializeField] private Animator _animator;
+        [SerializeField] private PlaySoundComponent _playSoundComponent;
 
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
@@ -100,9 +102,28 @@ namespace Components.Movement
                 yVelocity = _jumpForce;
                 JumpButtonWasPressed = true;
                 _animator.SetTrigger(JUMP);
+                PlayJumpSound();
             }
 
             return yVelocity;
+        }
+
+        private void PlayJumpSound()
+        {
+            if (Random.Range(0,4) == 0)
+                switch (Random.Range(0,2))
+                {
+                    case 0:
+                    {
+                        _playSoundComponent.Play("jump-1");
+                        break;
+                    }
+                    case 1:
+                    {
+                        _playSoundComponent.Play("jump-2");
+                        break;
+                    }
+                }
         }
 
 
