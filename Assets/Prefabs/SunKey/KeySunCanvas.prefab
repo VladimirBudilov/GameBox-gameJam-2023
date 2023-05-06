@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 695927971577594976}
   - component: {fileID: 695927971577594977}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FillImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -168,8 +168,9 @@ GameObject:
   - component: {fileID: 695927972597905786}
   - component: {fileID: 695927972597905787}
   - component: {fileID: 695927972597905764}
+  - component: {fileID: 891555185}
   m_Layer: 5
-  m_Name: SunCanvas
+  m_Name: KeySunCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,10 +385,36 @@ MonoBehaviour:
     m_Bits: 4096
   _EnterAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 891555185}
+        m_TargetAssemblyTypeName: Components.Interactions.InteractWithFillComponent,
+          Assembly-CSharp
+        m_MethodName: StartFill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _ExitAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 891555185}
+        m_TargetAssemblyTypeName: Components.Interactions.InteractWithFillComponent,
+          Assembly-CSharp
+        m_MethodName: StopFill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!60 &695927972597905764
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -430,3 +457,34 @@ PolygonCollider2D:
       - {x: 0.9967356, y: -1.0831652}
       - {x: 1.5497109, y: -0.60826755}
       - {x: 1.6704092, y: 0.37593454}
+--- !u!114 &891555185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695927972597905761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f221fffa82ef944921dffbdba055db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fillTickTimer:
+    _value: 0.1
+  _fillAmountWithTick: 2
+  _fillImage: {fileID: 695927971577594977}
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Components.Interactions.SwitchComponent, Assembly-CSharp
+        m_MethodName: Switch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
