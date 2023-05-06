@@ -8,7 +8,10 @@ namespace Components.Audio
 
         public void PlaySound(GameObject target)
         {
-            target.GetComponent<PlaySoundComponent>().Play(_soundId);
+            if (target.TryGetComponent(out PlaySoundComponent playSoundComponent))
+            {
+                playSoundComponent.Play(_soundId);
+            }
         }
     }
 }
