@@ -45,7 +45,7 @@ namespace Components.Movement
             _playerJoint.connectedAnchor = Vector2.zero;
             var isGrabSideRight = ropeLinkRigidbody.GetComponent<RopeLinkComponent>().IsGrabSideRight;
             UpdateSpriteDirection(isGrabSideRight);
-            _playerJoint.anchor = isGrabSideRight ? Vector2.left : Vector2.right;
+            _playerJoint.anchor = new Vector2(0.15f, 0);
             _grabTime.Reset();
         }
 
