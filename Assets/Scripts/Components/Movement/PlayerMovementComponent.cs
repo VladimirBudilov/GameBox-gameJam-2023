@@ -30,7 +30,6 @@ namespace Components.Movement
         private static readonly int IS_RUNNING = Animator.StringToHash("is-running");
         private static readonly int JUMP = Animator.StringToHash("jump");
         private static readonly int IS_FALLING = Animator.StringToHash("is-falling");
-        private static readonly int IS_LANDING = Animator.StringToHash("is-landing");
         private static readonly int IS_GROUNDED = Animator.StringToHash("is-grounded");
 
         public float Direction { get; set; }
