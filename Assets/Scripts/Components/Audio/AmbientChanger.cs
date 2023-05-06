@@ -1,3 +1,4 @@
+using Model;
 using UnityEngine;
 
 namespace Components.Audio
@@ -7,9 +8,10 @@ namespace Components.Audio
     {
         [SerializeField] private AudioData[] _clipsData;
         private AudioSource _source;
-
         private AudioClip _queuedClip;
         private bool _isNewClipInQueue;
+        private bool IsPaused => GameSession.Instance.PauseManager.IsPaused;
+
 
         private void Awake()
         {
@@ -39,7 +41,7 @@ namespace Components.Audio
 
         private void Update()
         {
-            if (!_isNewClipInQueue || _source.isPlaying) return;
+            if (!_isNewClipInQueue || _source.isPlaying || IsPaused) return;
 
             _source.clip = _queuedClip;
             _source.loop = true;

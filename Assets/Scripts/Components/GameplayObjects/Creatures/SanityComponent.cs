@@ -1,6 +1,7 @@
 using System;
 using Components.ColliderBased;
 using Model;
+using Pause;
 using PersistantData;
 using Unity.Mathematics;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Components.GameplayObjects.Creatures
         [SerializeField] private LayerCheck _saveZoneCheck;
         [SerializeField] private LayerCheck _lightCheck;
         private FloatProperty _sanity;
+        private PauseManager Pause => GameSession.Instance.PauseManager;
 
         public FloatProperty Sanity
         {
@@ -30,10 +32,19 @@ namespace Components.GameplayObjects.Creatures
             Sanity = GameSession.Instance.PlayerData.Sanity;
             Sanity.Value = _maxSanity;
             GameSession.Instance.PlayerData.MaxSanity = _maxSanity;
+            Pause.Register(_sanityTickLoseTimer);
+            Pause.Register(_sanityTickRegenTimer);
+        }
+
+        private void OnDestroy()
+        {
+            Pause.UnRegister(_sanityTickLoseTimer);
+            Pause.UnRegister(_sanityTickRegenTimer);
         }
 
         private void Update()
         {
+            
             if (!_lightCheck.IsTouchingLayer && !_saveZoneCheck.IsTouchingLayer && _sanityTickLoseTimer.IsReady)
             {
                 var newSanityValue = _sanity.Value - _sanityLoseByTick;

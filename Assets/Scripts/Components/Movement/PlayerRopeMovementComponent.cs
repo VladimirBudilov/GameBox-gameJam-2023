@@ -1,6 +1,5 @@
 ﻿using Components.GameplayObjects.Rope;
 using Model;
-using UnityEditor.Animations;
 using UnityEngine;
 using Utils;
 
@@ -11,8 +10,8 @@ namespace Components.Movement
     public class PlayerRopeMovementComponent : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private AnimatorController _ropeController;
-        [SerializeField] private AnimatorController _groundController;
+        [SerializeField] private RuntimeAnimatorController _ropeController;
+        [SerializeField] private RuntimeAnimatorController _groundController;
         [SerializeField] private float _jumpOffForce = 3f;
         [SerializeField] private Timer _grabTime;
         private HingeJoint2D _playerJoint;
@@ -51,7 +50,6 @@ namespace Components.Movement
         public void ReleaseRope()
         {
             GameSession.Instance.Player.SetGroundMovement();
-            Debug.Log("Rope released!");
             _animator.runtimeAnimatorController = _groundController;
             _playerJoint.enabled = false;
             _playerJoint.connectedBody = null;
