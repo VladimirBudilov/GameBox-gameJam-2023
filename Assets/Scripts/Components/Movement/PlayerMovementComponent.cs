@@ -51,7 +51,6 @@ namespace Components.Movement
 
         private void FixedUpdate()
         {
-            Debug.Log(IsActive);
             if (!IsActive) return;
             var velocity = CalculateVelocity();
             _rigidbody.velocity = velocity;
