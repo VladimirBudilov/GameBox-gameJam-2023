@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 76b0af9ce2bbf114488cfc2d8a199d4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da9848d16e51a704385695b6121082a2, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 863c916ac8a5cb3478185c4f0bd01ea2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e676224a471f04641b06164fbe593a09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -162,13 +162,11 @@ GameObject:
   m_Component:
   - component: {fileID: 695927972597905765}
   - component: {fileID: 695927972597905766}
-  - component: {fileID: 695927972597905767}
-  - component: {fileID: 695927972597905760}
   - component: {fileID: 695927972597905785}
   - component: {fileID: 695927972597905786}
   - component: {fileID: 695927972597905787}
-  - component: {fileID: 695927972597905764}
   - component: {fileID: 891555185}
+  - component: {fileID: 1600316107}
   m_Layer: 5
   m_Name: KeySunCanvas
   m_TagString: Untagged
@@ -219,46 +217,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -9
   m_TargetDisplay: 0
---- !u!114 &695927972597905767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695927972597905761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 200
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
---- !u!114 &695927972597905760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695927972597905761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!82 &695927972597905785
 AudioSource:
   m_ObjectHideFlags: 0
@@ -269,8 +227,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: aa55465fce677cb4cb6c2be224665aa5, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -278,9 +236,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  DopplerLevel: 0
+  MinDistance: 1.5
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -315,7 +273,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -415,48 +373,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!60 &695927972597905764
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695927972597905761}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.2451601, y: 0.52861404}
-      - {x: 0.8002014, y: 0.9055376}
-      - {x: 0.29146862, y: 1.1273232}
-      - {x: -0.5213604, y: 1.2268867}
-      - {x: -1.1434422, y: 1.0618284}
-      - {x: -1.6421051, y: 0.82464314}
-      - {x: -1.796937, y: 0.47365475}
-      - {x: -1.8641443, y: 0.23765564}
-      - {x: -1.9013834, y: -0.59640026}
-      - {x: -1.7694349, y: -0.92098236}
-      - {x: -1.3991485, y: -1.2356108}
-      - {x: -0.86446, y: -1.27174}
-      - {x: -0.2872858, y: -1.2013178}
-      - {x: 0.4930048, y: -1.2941666}
-      - {x: 0.9967356, y: -1.0831652}
-      - {x: 1.5497109, y: -0.60826755}
-      - {x: 1.6704092, y: 0.37593454}
 --- !u!114 &891555185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fillTickTimer:
     _value: 0.1
-  _fillAmountWithTick: 2
+  _fillAmountWithTick: 0.02
   _fillImage: {fileID: 695927971577594977}
   _action:
     m_PersistentCalls:
@@ -488,3 +404,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Components.Interactions.SwitchComponent, Assembly-CSharp
+        m_MethodName: LockSwitching
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _source: {fileID: 695927972597905785}
+--- !u!58 &1600316107
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695927972597905761}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

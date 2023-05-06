@@ -170,6 +170,9 @@ GameObject:
   - component: {fileID: -4794680870257726419}
   - component: {fileID: 6699604083378147446}
   - component: {fileID: 1823000881417533415}
+  - component: {fileID: 907999447571484979}
+  - component: {fileID: 1278341325}
+  - component: {fileID: 1278341326}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -402,10 +405,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b86befcbdddca04598f3a1d30872cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 1667990911879087897}
+  _animator: {fileID: 907999447571484979}
   _speed: 3
   _jumpForce: 6
-  _deathHigh: 9.6
+  _deathHigh: 11.6
   _deathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -435,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614389a3308e4a218e65ba8a29c8b1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 1667990911879087897}
+  _animator: {fileID: 907999447571484979}
   _ropeController: {fileID: 9100000, guid: 486fb7f75b8c6f1419ca31bf5f1d061e, type: 2}
   _groundController: {fileID: 9100000, guid: 098a0c5bd099ab948b5448d45c59aaa3, type: 2}
   _jumpOffForce: 3
@@ -553,6 +556,147 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc00bda029dc40e89c43ec9fddb3ae14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &907999447571484979
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599382716302413517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 098a0c5bd099ab948b5448d45c59aaa3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &1278341325
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599382716302413517}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1278341326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599382716302413517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64fcb78df2f1bb4aa61995d71978e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 1278341325}
+  _sounds:
+  - _id: jump
+    _clip: {fileID: 8300000, guid: 9d28a837691fd1046821a84fe3d2be1e, type: 3}
+  - _id: jump_fall
+    _clip: {fileID: 8300000, guid: adc2fe02a24a9aa4abccff864bbcd6e8, type: 3}
+  - _id: rest
+    _clip: {fileID: 8300000, guid: aad557094caca4c44b6aacca57c0e1c9, type: 3}
+  - _id: step-1
+    _clip: {fileID: 8300000, guid: 28ad48f1d409d0440a7c4445af96e0f4, type: 3}
+  - _id: step-2
+    _clip: {fileID: 8300000, guid: db9176ac03a1f6d44a9181d2008cffa9, type: 3}
 --- !u!1 &6599382717097817119
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +863,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6599382717273414910}
   - component: {fileID: 6599382717273414849}
-  - component: {fileID: 1667990911879087897}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -783,7 +926,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 11660e00949421e4ab688970d897f2be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32527c3cfbaa3254b8d1ba7ddda634cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -794,27 +937,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1667990911879087897
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6599382717273414911}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 098a0c5bd099ab948b5448d45c59aaa3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6599382717988185591
 GameObject:
   m_ObjectHideFlags: 0

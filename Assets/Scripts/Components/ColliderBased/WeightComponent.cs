@@ -21,7 +21,7 @@ namespace Components.ColliderBased
 
         public void PushWeight(Vector2 direction, int startForce)
         {
-            _rigidbody.AddForce((Vector2.up + direction) * startForce, ForceMode2D.Impulse);
+            _rigidbody.AddForce(direction * startForce, ForceMode2D.Impulse);
         }
 
         private void OnEnable()

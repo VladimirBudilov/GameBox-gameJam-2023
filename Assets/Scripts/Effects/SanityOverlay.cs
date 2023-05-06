@@ -19,9 +19,9 @@ namespace Effects
         private void OnSanityChanged(float newValue, float _)
         {
             var maxSanity = _gameSession.PlayerData.MaxSanity;
-            if (maxSanity ==0) return;
+            if (maxSanity == 0 || newValue <= 0 || newValue > maxSanity) return;
             var segmentValueAmount = maxSanity / _sprites.Length;
-            var segment = _sprites.Length - (int) (newValue / segmentValueAmount) - 1;
+            var segment = Mathf.Max(_sprites.Length - (int) (newValue / segmentValueAmount) - 1, 0);
             _image.sprite = _sprites[segment];
         }
 
