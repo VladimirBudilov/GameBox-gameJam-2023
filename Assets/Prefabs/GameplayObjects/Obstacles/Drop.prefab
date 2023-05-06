@@ -147,6 +147,18 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8761649010746553921}
+        m_TargetAssemblyTypeName: Components.Audio.PlaySoundComponent, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 3
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: -6623358743131165698}
         m_TargetAssemblyTypeName: Obstacles.DropOfWater, Assembly-CSharp
         m_MethodName: DealDamage
@@ -367,3 +379,5 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 23140d85a8bb384489768059034ed18b, type: 3}
   - _id: 2
     _clip: {fileID: 8300000, guid: 4e93d05c5030174478bc8e78656c6eb4, type: 3}
+  - _id: 3
+    _clip: {fileID: 8300000, guid: 1134db94ba4146f4eaf7a207fa158619, type: 3}
