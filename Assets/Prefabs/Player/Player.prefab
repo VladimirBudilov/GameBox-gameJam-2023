@@ -441,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _jumpForce: 7
-  _deathHigh: 20
+  _deathHigh: 1000
   _deathEvent:
     m_PersistentCalls:
       m_Calls:
