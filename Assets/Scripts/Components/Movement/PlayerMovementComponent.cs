@@ -1,3 +1,4 @@
+using Components.Audio;
 using Components.ColliderBased;
 using UnityEngine;
 using Utils;
@@ -9,16 +10,19 @@ namespace Components.Movement
     {
         [Header("Settings fields")]
         [SerializeField] private Animator _animator;
+        [SerializeField] private PlaySoundComponent _playSoundComponent;
+
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _deathHigh;
 
-        [Space] [Header("Checkers")]
-        [SerializeField] private DeathEvent _deathEvent;
+        [Space] [Header("Checkers")] [SerializeField]
+        private DeathEvent _deathEvent;
+
         [SerializeField] private LayerCheck _groundCheck;
 
-        [Space] [Header("UI")] 
-        [SerializeField] private Transform _sanityBarCanvasTransform;
+        [Space] [Header("UI")] [SerializeField]
+        private Transform _sanityBarCanvasTransform;
 
         private Rigidbody2D _rigidbody;
         private bool _isJumping;
@@ -26,6 +30,9 @@ namespace Components.Movement
         private bool _isDied;
 
         private static readonly int IS_RUNNING = Animator.StringToHash("is-running");
+        private static readonly int JUMP = Animator.StringToHash("jump");
+        private static readonly int IS_FALLING = Animator.StringToHash("is-falling");
+        private static readonly int IS_GROUNDED = Animator.StringToHash("is-ground");
 
         public float Direction { get; set; }
         public bool IsJumpPressing { get; set; }
@@ -43,19 +50,21 @@ namespace Components.Movement
             if (_rigidbody.velocity.y <= -_deathHigh && !_isDied)
             {
                 _isDied = true;
+                _animator.enabled = false;
                 _deathEvent?.Invoke("fall");
             }
-
+            
             _isGrounded = _groundCheck.IsTouchingLayer;
         }
 
         private void FixedUpdate()
         {
-            Debug.Log(IsActive);
-            if (!IsActive) return;
+            if (!IsActive || _isDied) return;
             var velocity = CalculateVelocity();
             _rigidbody.velocity = velocity;
-
+            _animator.SetBool(IS_FALLING, _rigidbody.velocity.y < 0);
+            _animator.SetBool(IS_GROUNDED, _isGrounded);
+            
             UpdateSpriteDirection();
         }
 
@@ -92,9 +101,29 @@ namespace Components.Movement
             {
                 yVelocity = _jumpForce;
                 JumpButtonWasPressed = true;
+                _animator.SetTrigger(JUMP);
+                PlayJumpSound();
             }
 
             return yVelocity;
+        }
+
+        private void PlayJumpSound()
+        {
+            if (Random.Range(0,4) == 0)
+                switch (Random.Range(0,2))
+                {
+                    case 0:
+                    {
+                        _playSoundComponent.Play("jump-1");
+                        break;
+                    }
+                    case 1:
+                    {
+                        _playSoundComponent.Play("jump-2");
+                        break;
+                    }
+                }
         }
 
 
