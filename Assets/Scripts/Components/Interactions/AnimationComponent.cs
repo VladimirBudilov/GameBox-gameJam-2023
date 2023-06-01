@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Components.Interactions
@@ -14,7 +14,6 @@ namespace Components.Interactions
         {
             set
             {
-                _event = null;
                 _event = value;
             }
         }
