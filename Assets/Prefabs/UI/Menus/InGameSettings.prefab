@@ -137,9 +137,9 @@ MonoBehaviour:
           m_StringArgument: 0
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 989573952766549860}
-        m_TargetAssemblyTypeName: UI.Menus.InGameSettingsMenu, Assembly-CSharp
-        m_MethodName: Exit
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EndGame, Assembly-CSharp
+        m_MethodName: GameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -158,8 +158,8 @@ AudioSource:
   m_GameObject: {fileID: 989573952229201185}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a7b1189c372a2da4c843de37f81b7643, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 7ce0d193c5fcb284f8143a87275d8c5d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -592,8 +592,8 @@ AudioSource:
   m_GameObject: {fileID: 989573952715053991}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a7b1189c372a2da4c843de37f81b7643, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 7ce0d193c5fcb284f8143a87275d8c5d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeForSlide:
-    _value: 6
+    _value: 3
   _cutsceneImage: {fileID: 1044034148}
   _slides:
   - {fileID: 21300000, guid: 317a5c49ae666a64fb3b834867dd82c4, type: 3}

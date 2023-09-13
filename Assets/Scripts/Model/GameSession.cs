@@ -78,10 +78,10 @@ namespace Model
         public void ShowDeath(string id)
         {
             IsCutscene = true;
+            Cursor.visible = true;
             _deathScreen.gameObject.SetActive(true);
             PauseManager.SetPaused(true);
             _deathScreen.Death(id);
-            Cursor.visible = true;
         }
 
         public void SetSpawnPosition(Transform spawnPosition)

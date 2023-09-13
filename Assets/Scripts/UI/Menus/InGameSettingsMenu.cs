@@ -18,10 +18,10 @@ namespace UI.Menus
 
         public void SetPaused(bool isPaused)
         {
+            Cursor.visible = isPaused;
             if (GameSession.Instance.IsCutscene) return;
             gameObject.SetActive(isPaused);
             _globalVolume.enabled = isPaused;
-            Cursor.visible = isPaused;
         }
         
         private void OnDestroy()
