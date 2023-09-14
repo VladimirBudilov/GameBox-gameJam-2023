@@ -182,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6a7d2c54973959f4ab2dd3ed20500899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeForSlide:
-    _value: 3
+    _value: 2
   _cutsceneImage: {fileID: 1044034148}
   _slides:
   - {fileID: 21300000, guid: 317a5c49ae666a64fb3b834867dd82c4, type: 3}

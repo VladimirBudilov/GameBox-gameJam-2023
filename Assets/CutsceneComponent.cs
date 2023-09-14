@@ -19,8 +19,6 @@ public class CutsceneComponent : MonoBehaviour
 
     private void Update()
     {
-        if (Input.anyKeyDown) _timeForSlide.EarlyComplete();
-
         if (_timeForSlide.IsReady)
         {
             _currentSlide++;
