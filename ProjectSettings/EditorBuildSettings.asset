@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/UIScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Start Scene.unity
+    guid: a4f6b15a0f7547f4d84db114d49ad3fc
   - enabled: 1
-    path: Assets/Scenes/DarkLevel Scene.unity
-    guid: 2bfc160518f2cbb4baeac55d41d7f033
+    path: Assets/Scenes/BeginCutscene.unity
+    guid: 0f061f62dba1636439f708ddbbf4ffef
+  - enabled: 1
+    path: Assets/Scenes/Level_01.unity
+    guid: b1ba8f64ab3aefc42a35913c90aef70c
+  - enabled: 1
+    path: Assets/Scenes/AuthorsScene.unity
+    guid: fd2b6491582237f44a64dd0d9a7fb8c1
   m_configObjects: {}

@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1220541940883486672}
   - component: {fileID: 1220541940883486675}
-  - component: {fileID: 1220541940883486673}
-  - component: {fileID: 1220541940883486678}
   m_Layer: 0
   m_Name: ScenesManager
   m_TagString: Untagged
@@ -46,30 +44,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1e73d5a0a879142b201a2c598fa66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1220541940883486673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220541940883486674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc00af62524455d9588fc22c591e273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _music: {fileID: 0}
-  _sfx: {fileID: 0}
---- !u!114 &1220541940883486678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220541940883486674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b836df2605ee4474992ee12c2851d458, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _window: {fileID: 0}

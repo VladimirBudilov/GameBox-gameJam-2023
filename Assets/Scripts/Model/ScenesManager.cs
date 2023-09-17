@@ -5,7 +5,12 @@ public class ScenesManager : MonoBehaviour
 {
     public void LoadStartScene()
     {
-        SceneManager.LoadScene("Scenes/Demo Scene");
+        SceneManager.LoadScene("BeginCutscene");
+    }
+
+    public void LoadAutorhsScene()
+    {
+        SceneManager.LoadScene("AuthorsScene");
     }
 
     public void Exit()

@@ -3,6 +3,7 @@ using Model;
 using Pause;
 using PersistantData;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
 using Utils;
 
@@ -16,6 +17,8 @@ namespace Components.GameplayObjects.Creatures
         [SerializeField] private float _lightLoseByTick;
         [SerializeField] private Timer _regenLightTimer;
         [SerializeField] private float _lightRegenByTick;
+        [SerializeField] private Timer _soundTimer;
+        [SerializeField] private UnityEvent _soundEvent;
         [Space][Header("Checkers")]
         [SerializeField] private LayerCheck _saveZoneMask;
         [Space][Header("Light amount stats")]
@@ -56,9 +59,19 @@ namespace Components.GameplayObjects.Creatures
 
             if (_saveZoneMask.IsTouchingLayer && _regenLightTimer.IsReady)
             {
+                PlayRegenSound();
                 FireflyRegeneratingLight();
                 SetLightAndCollider();
                 
+            }
+        }
+
+        private void PlayRegenSound()
+        {
+            if (_soundTimer.IsReady)
+            {
+                _soundEvent.Invoke();
+                _soundTimer.Reset();
             }
         }
 
